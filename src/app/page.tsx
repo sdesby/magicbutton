@@ -48,38 +48,51 @@ export default function Home() {
   };
 
   return (
-    <div className="grid min-h-screen items-center justify-items-center p-8 bg-[#0a0a0a]">
-      <div className="flex flex-col items-center gap-12">
-        <h1 className="neon-text">How do you feel today?</h1>
+    <div className="min-h-screen flex items-center justify-center p-6 bg-[var(--dark-bg)]">
+      <div className="flex flex-col items-center gap-8 w-full max-w-md">
+        <h1 className="title">How do you feel today?</h1>
+        
         <div className="emoji-container">
-          <span 
+          <button 
             className="emoji" 
-            role="img" 
-            aria-label="neutral face"
+            role="button"
+            aria-label="I'm feeling bored"
             onClick={() => handleEmojiClick('Bored')}
-          >😐</span>
-          <span className="emoji" role="img" aria-label="anxious face" onClick={() => handleEmojiClick('Anxious')}>😰</span>
-          <span className="emoji" role="img" aria-label="pleading face" onClick={() => handleEmojiClick('Sad')}>🥺</span>
+          >😐</button>
+          <button 
+            className="emoji" 
+            role="button"
+            aria-label="I'm feeling anxious"
+            onClick={() => handleEmojiClick('Anxious')}
+          >😰</button>
+          <button 
+            className="emoji" 
+            role="button"
+            aria-label="I'm feeling sad"
+            onClick={() => handleEmojiClick('Sad')}
+          >🥺</button>
         </div>
         
         {isLoading && (
-          <div className="text-white text-xl animate-pulse">
-            Processing your feeling...
+          <div className="loading-animation">
+            <div className="loading-dot"></div>
+            <div className="loading-dot"></div>
+            <div className="loading-dot"></div>
           </div>
         )}
         
         {error && (
-          <div className="text-red-500 text-lg text-center max-w-md">
+          <div className="text-[var(--candy-pink)] text-lg text-center p-4 bg-white/5 rounded-lg">
             {error}
           </div>
         )}
         
         {response && (
-          <div className="flex flex-col items-center gap-4 max-w-md text-center">
-            <div className="text-[var(--neon-blue)] text-xl font-semibold">
+          <div className="response-container">
+            <div className="text-[var(--candy-yellow)] text-xl font-semibold mb-4">
               {response.promptType}
             </div>
-            <div className="text-white text-lg">
+            <div className="text-white text-lg leading-relaxed">
               {response.joyBurst}
             </div>
           </div>

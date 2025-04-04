@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --neon-pink: #ff00ff;
-  --neon-blue: #00ffff;
-  --dark-bg: #0a0a0a;
-  --netflix-red: #E50914;
-  --netflix-black: #141414;
+  --candy-pink: #FF89B5;
+  --candy-purple: #B388FF;
+  --candy-blue: #89CFF0;
+  --candy-yellow: #FFE66D;
+  --vibrant-pink: #FF1493;
+  --dark-bg: #2A0E37;
 }
 
 body {
@@ -15,50 +18,106 @@ body {
   color: white;
   min-height: 100vh;
   margin: 0;
+  font-family: 'Fredoka', sans-serif;
 }
 
-.neon-text {
-  font-size: 3rem;
-  font-weight: bold;
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
   text-align: center;
-  background: linear-gradient(to right, var(--neon-pink), var(--neon-blue));
+  background: linear-gradient(45deg, var(--candy-pink), var(--candy-purple), var(--candy-blue));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   text-shadow: 
-    0 0 10px rgba(255, 0, 255, 0.5),
-    0 0 20px rgba(255, 0, 255, 0.3),
-    0 0 30px rgba(255, 0, 255, 0.1);
+    0 0 20px rgba(255, 137, 181, 0.3),
+    0 0 40px rgba(179, 136, 255, 0.2);
+  animation: titleGlow 2s ease-in-out infinite alternate;
 }
 
 .emoji-container {
   display: flex;
-  gap: 2rem;
-  font-size: 4rem;
+  gap: 3rem;
+  padding: 2rem;
 }
 
 .emoji {
-  transition: transform 0.2s;
+  font-size: 3.5rem;
+  transition: all 0.3s ease;
   cursor: pointer;
+  padding: 1rem;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
 }
 
 .emoji:hover {
-  transform: scale(1.2);
+  transform: scale(1.1) rotate(-5deg);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(255, 137, 181, 0.3);
 }
 
-.netflix-button {
-  background-color: var(--netflix-red);
-  color: white;
-  padding: 16px 32px;
-  border: none;
-  border-radius: 4px;
-  font-size: 1.5rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: transform 0.2s, background-color 0.2s;
+.response-container {
+  max-width: 400px;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(255, 137, 181, 0.1), rgba(179, 136, 255, 0.1));
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: fadeIn 0.5s ease-out;
 }
 
-.netflix-button:hover {
-  transform: scale(1.05);
-  background-color: #f40612;
+.loading-animation {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.loading-dot {
+  width: 12px;
+  height: 12px;
+  background: var(--candy-purple);
+  border-radius: 50%;
+  animation: loadingBounce 0.5s ease-in-out infinite;
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: 0.1s;
+  background: var(--candy-pink);
+}
+
+.loading-dot:nth-child(3) {
+  animation-delay: 0.2s;
+  background: var(--candy-blue);
+}
+
+@keyframes titleGlow {
+  0% {
+    text-shadow: 0 0 20px rgba(255, 137, 181, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 40px rgba(179, 136, 255, 0.5);
+  }
+}
+
+@keyframes loadingBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
