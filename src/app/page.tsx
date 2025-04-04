@@ -40,7 +40,6 @@ export default function Home() {
       setResponse(data as WebhookResponse);
     } catch (error) {
       const message = error instanceof Error ? error.message : 'An unexpected error occurred';
-      console.error('Error sending feeling:', error);
       setError(message);
     } finally {
       setIsLoading(false);
