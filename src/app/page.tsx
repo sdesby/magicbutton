@@ -49,28 +49,21 @@ export default function Home() {
   return (
     <div className="min-h-screen flex items-center justify-center p-6 bg-[var(--dark-bg)]">
       <div className="flex flex-col items-center gap-8 w-full max-w-md">
-        <h1 className="title">How do you feel today?</h1>
+        <h1 className="title">😐 Feeling meh?</h1>
         
-        <div className="emoji-container">
-          <button 
-            className="emoji" 
-            role="button"
-            aria-label="I'm feeling bored"
-            onClick={() => handleEmojiClick('Bored')}
-          >😐</button>
-          <button 
-            className="emoji" 
-            role="button"
-            aria-label="I'm feeling anxious"
-            onClick={() => handleEmojiClick('Anxious')}
-          >😰</button>
-          <button 
-            className="emoji" 
-            role="button"
-            aria-label="I'm feeling sad"
-            onClick={() => handleEmojiClick('Sad')}
-          >🥺</button>
-        </div>
+        <h2 className="text-[var(--candy-yellow)] text-xl text-center">
+          Tap the Magic Button and get a mini mission to shake up your day.
+        </h2>
+        
+        <button 
+          className="bg-gradient-to-r from-[var(--candy-pink)] to-[var(--candy-purple)] 
+                    text-white font-semibold py-4 px-8 rounded-full shadow-lg 
+                    hover:scale-105 transition-transform duration-200 ease-in-out
+                    text-lg"
+          onClick={() => handleEmojiClick('Bored')}
+        >
+          Release me from boredom
+        </button>
         
         {isLoading && (
           <div className="loading-animation">
@@ -91,9 +84,18 @@ export default function Home() {
             <div className="text-[var(--candy-yellow)] text-xl font-semibold mb-4">
               {response.promptType}
             </div>
-            <div className="text-white text-lg leading-relaxed">
+            <div className="text-white text-lg leading-relaxed mb-6">
               {response.joyBurst}
             </div>
+            <button 
+              className="bg-gradient-to-r from-[var(--candy-purple)] to-[var(--candy-blue)] 
+                        text-white font-semibold py-3 px-6 rounded-full shadow-lg 
+                        hover:scale-105 transition-transform duration-200 ease-in-out
+                        text-base"
+              onClick={() => handleEmojiClick('Bored')}
+            >
+              Give me another!
+            </button>
           </div>
         )}
       </div>
