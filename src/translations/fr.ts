@@ -6,5 +6,13 @@ export const fr = {
   errors: {
     default: "Une erreur inattendue s'est produite",
     failedToSend: "Échec de l'envoi du sentiment"
+  },
+  contact: {
+    title: "Envie de plus de magie ?",
+    subtitle: "Laisse-nous ton email pour savoir quand sera délivrée ta prochaine dose de joie !",
+    emailPlaceholder: "Ton email",
+    submitButton: "Envoie-moi plus de magie !",
+    success: "✨ C'est fait ! Vérifie ta boîte mail",
+    error: "Oups ! Quelque chose s'est mal passé"
   }
 };
