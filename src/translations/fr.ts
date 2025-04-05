@@ -1,6 +1,6 @@
 export const fr = {
-  title: "😐 Envie de secouer la routine ?",
-  subtitle: "Tape sur le Bouton Magique et pour changer ta journée !",
+  title: "Envie de secouer la routine ?",
+  subtitle: "Tape sur le Bouton Magique pour changer ta journée !",
   mainButton: "Sauve-moi de l’ennui !",
   anotherButton: "Une autre dose !",
   errors: {
