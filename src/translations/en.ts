@@ -6,5 +6,13 @@ export const en = {
   errors: {
     default: "An unexpected error occurred",
     failedToSend: "Failed to send feeling"
+  },
+  contact: {
+    title: "Want more magic?",
+    subtitle: "Leave your email and we'll send you daily doses of joy!",
+    emailPlaceholder: "Enter your email",
+    submitButton: "Send me magic!",
+    success: "✨ You're in! Check your inbox for magic",
+    error: "Oops! Something went wrong"
   }
 };

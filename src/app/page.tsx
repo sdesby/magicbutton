@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useLanguage } from '../hooks/useLanguage';
+import { useRouter } from 'next/navigation';
 
 interface WebhookResponse {
   promptType: string;
@@ -13,6 +14,7 @@ interface ErrorResponse {
 }
 
 export default function Home() {
+  const router = useRouter();
   const [response, setResponse] = useState<WebhookResponse | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -102,7 +104,7 @@ export default function Home() {
                             text-white font-semibold py-3 px-6 rounded-full shadow-lg 
                             hover:scale-105 transition-transform duration-200 ease-in-out
                             text-base"
-                  onClick={() => handleEmojiClick('Bored')}
+                  onClick={() => router.push('/contact')}
                 >
                   {t.anotherButton}
                 </button>
