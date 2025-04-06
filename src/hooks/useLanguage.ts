@@ -2,33 +2,25 @@ import { useState, useEffect } from 'react';
 import { en } from '../translations/en';
 import { fr } from '../translations/fr';
 
-export type LanguageCode = 'ENG' | 'FR';
+export type Translations = typeof en;
 
-interface LanguageHook {
-  translations: typeof en;
-  languageCode: LanguageCode;
-  isLoading: boolean;
-}
-
-export function useLanguage(): LanguageHook {
-  const [translations, setTranslations] = useState(en);
-  const [languageCode, setLanguageCode] = useState<LanguageCode>('ENG');
-  const [isLoading, setIsLoading] = useState(true);
+export function useLanguage() {
+  const [languageState, setLanguageState] = useState({
+    translations: en,
+    languageCode: 'ENG',
+    isLoading: true
+  });
 
   useEffect(() => {
-    try {
-      const userLanguage = navigator.language.toLowerCase();
-      if (userLanguage.startsWith('fr')) {
-        setTranslations(fr);
-        setLanguageCode('FR');
-      }
-    } catch {
-      // If navigator.language is not available, fallback to English
-      console.warn('Could not detect browser language, falling back to English');
-    } finally {
-      setIsLoading(false);
-    }
+    const browserLang = navigator.language.toLowerCase();
+    const isFrench = browserLang.startsWith('fr');
+    
+    setLanguageState({
+      translations: isFrench ? fr : en,
+      languageCode: isFrench ? 'FR' : 'ENG',
+      isLoading: false
+    });
   }, []);
 
-  return { translations, languageCode, isLoading };
+  return languageState;
 }
