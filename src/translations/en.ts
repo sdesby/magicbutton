@@ -41,7 +41,7 @@ export const en = {
       subtitle: "We'll warn you straight to your inbox. 0 spams, it's a promise.",
       placeholder: "Enter your email",
       submitButton: "Send me magic!",
-      success: "Thanks! We'll send you something worth the wait soon.\nMeanwhile, you can go back to having fun 👇",
+      success: "Thanks! We'll send you a program worth the wait soon.\nMeanwhile, you can go back to having fun 👇",
       error: "Oops! Something went wrong",
       backToHome: "Back to home"
     }
