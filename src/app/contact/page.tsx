@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useLanguage } from '@/hooks/useLanguage';
 import { useRouter } from 'next/navigation';
+import { trackEvent } from '@/utils/analytics';
 
 type FormStep = 'series' | 'themes' | 'email';
 type SeriesAnswer = 'yes' | 'maybe' | 'no';
@@ -26,11 +27,23 @@ export default function Contact() {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const handleSeriesAnswer = (answer: SeriesAnswer) => {
+    trackEvent('series_interest', {
+      event_category: 'user_preference',
+      event_label: answer,
+    });
     setSeriesAnswer(answer);
     setCurrentStep('themes');
+    trackEvent('form_step_change', {
+      event_category: 'engagement',
+      event_label: `Step series to themes`,
+    });
   };
 
   const handleThemeToggle = (theme: ThemeAnswer) => {
+    trackEvent('theme_selection', {
+      event_category: 'user_preference',
+      event_label: theme,
+    });
     setSelectedThemes(prev => 
       prev.includes(theme) 
         ? prev.filter(t => t !== theme)
@@ -41,20 +54,36 @@ export default function Contact() {
   const handleThemesSubmit = () => {
     if (selectedThemes.length > 0) {
       setCurrentStep('email');
+      trackEvent('form_step_change', {
+        event_category: 'engagement',
+        event_label: `Step themes to email`,
+      });
     }
   };
 
   const handleBack = () => {
     if (currentStep === 'themes') {
       setCurrentStep('series');
+      trackEvent('form_step_change', {
+        event_category: 'engagement',
+        event_label: `Step themes to series`,
+      });
     } else if (currentStep === 'email') {
       setCurrentStep('themes');
+      trackEvent('form_step_change', {
+        event_category: 'engagement',
+        event_label: `Step email to themes`,
+      });
     }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
+    trackEvent('form_submission', {
+      event_category: 'form',
+      event_label: 'contact_form',
+    });
 
     try {
       const webhookUrl = process.env.NEXT_PUBLIC_CONTACT_WEBHOOK_URL;
@@ -83,9 +112,17 @@ export default function Contact() {
       }
 
       setStatus('success');
+      trackEvent('form_success', {
+        event_category: 'form',
+        event_label: 'contact_form',
+      });
     } catch (error) {
       console.error('Error submitting form:', error);
       setStatus('error');
+      trackEvent('form_error', {
+        event_category: 'form',
+        event_label: error instanceof Error ? error.message : 'Unknown error',
+      });
     }
   };
 
