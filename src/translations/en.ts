@@ -27,9 +27,9 @@ export const en = {
       title: "Which series themes would you be most into?",
       subtitle: "(We're cooking some up — your vote helps us decide.)",
       options: {
+        boredom: "😴 Distract me when I go round in circles",
         creativity: "✍️ Boost my creativity (writing, drawing, photography…)",
         outdoor: "🌳 Go out more, even solo",
-        social: "😳 Build social confidence",
         routine: "🔄 Break out of daily routines",
         brain: "🧠 Wake up my brain in new ways",
         curious: "🤫 I'm just curious to see what you come up with"

@@ -7,7 +7,7 @@ import { trackEvent } from '@/utils/analytics';
 
 type FormStep = 'series' | 'themes' | 'email';
 type SeriesAnswer = 'yes' | 'maybe' | 'no';
-type ThemeAnswer = 'creativity' | 'outdoor' | 'social' | 'routine' | 'brain' | 'curious';
+type ThemeAnswer = 'boredom' | 'creativity' | 'outdoor' | 'routine' | 'brain' | 'curious';
 
 interface FormData {
   email: string;

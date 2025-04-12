@@ -27,9 +27,9 @@ export const fr = {
       title: "Quels thèmes t'intéressent le plus ?",
       subtitle: "(On en prépare quelques-uns — ton vote nous aide à choisir.)",
       options: {
+        boredom: "😴 Me distraire quand je tourne rond",
         creativity: "✍️ Booster ma créativité (écriture, dessin, photo…)",
         outdoor: "🌳 Sortir plus, même en solo",
-        social: "😳 Développer ma confiance sociale",
         routine: "🔄 Casser ma routine quotidienne",
         brain: "🧠 Réveiller mon cerveau autrement",
         curious: "🤫 Je suis juste curieux·se de voir ce que vous proposez"
