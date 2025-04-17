@@ -1,8 +1,14 @@
 export const fr = {
   title: "Envie de secouer la routine ?",
-  subtitle: "Tape sur le Bouton Magique pour changer ta journée !",
-  mainButton: "Sauve-moi de l'ennui !",
-  anotherButton: "Une autre dose !",
+  subtitle: "Aujourd'hui, j'ai envie de...",
+  mainButton: undefined, // Deprecated in v2
+  mainButtons: {
+    create: "✍️ Créer",
+    move: "🚶‍♀️ Bouger",
+    feel: "🌈 Ressentir",
+    think: "🤯 Réfléchir"
+  },
+  moreButton: "J'en veux plus",
   errors: {
     default: "Une erreur inattendue s'est produite",
     failedToSend: "Échec de l'envoi du sentiment"

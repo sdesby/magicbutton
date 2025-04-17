@@ -1,8 +1,14 @@
 export const en = {
   title: "Feeling meh?",
-  subtitle: "Tap the Magic Button and get a mini mission to shake up your day.",
-  mainButton: "Release me from boredom",
-  anotherButton: "Give me another!",
+  subtitle: "Today I want to...",
+  mainButton: undefined, // Deprecated in v2
+  mainButtons: {
+    create: "✍️ Create",
+    move: "🚶‍♀️ Move",
+    feel: "🌈 Feel",
+    think: "🤯 Think"
+  },
+  moreButton: "I want more",
   errors: {
     default: "An unexpected error occurred",
     failedToSend: "Failed to send feeling"
