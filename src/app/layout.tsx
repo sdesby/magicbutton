@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fredoka } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import { Providers } from "./providers";
 
 const fredoka = Fredoka({
   subsets: ["latin"],
@@ -32,7 +33,9 @@ export default function RootLayout({
         `}
       </Script>
       <body suppressHydrationWarning>
-        {children}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );

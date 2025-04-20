@@ -7,7 +7,7 @@ export type Translations = typeof en;
 export function useLanguage() {
   const [languageState, setLanguageState] = useState({
     translations: en,
-    languageCode: 'ENG',
+    languageCode: 'en',
     isLoading: true
   });
 
@@ -17,7 +17,7 @@ export function useLanguage() {
     
     setLanguageState({
       translations: isFrench ? fr : en,
-      languageCode: isFrench ? 'FR' : 'ENG',
+      languageCode: isFrench ? 'fr' : 'en',
       isLoading: false
     });
   }, []);
