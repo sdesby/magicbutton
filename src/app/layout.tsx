@@ -9,8 +9,11 @@ const fredoka = Fredoka({
 });
 
 export const metadata: Metadata = {
-  title: "Magic Button - Shake up your day!",
+  title: "Joy prompts - Shake up your day!",
   description: "Break out of boredom with a single tap.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
