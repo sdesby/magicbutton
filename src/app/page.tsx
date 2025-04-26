@@ -94,7 +94,7 @@ export default function Home() {
               </Link>
               <Link 
                 href="/auth/register" 
-                className="text-[var(--candy-yellow)] hover:underline transition-colors"
+                className="text-white hover:text-[var(--candy-yellow)] transition-colors"
               >
                 {t.navLinks.signUp}
               </Link>
@@ -187,6 +187,13 @@ export default function Home() {
             )}
           </>
         )}
+        
+        {/* About link in footer */}
+        <div className="mt-8 text-center text-white/70">
+          <Link href="/about" className="hover:text-white transition-colors">
+            {t.navLinks.about}
+          </Link>
+        </div>
       </div>
     </div>
   );

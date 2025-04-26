@@ -70,6 +70,12 @@ export default function CreativityHome() {
             </p>
           </div>
         </div>
+
+        <div className="mt-8 text-center text-white/70">
+          <Link href="/about" className="hover:text-white transition-colors">
+            {t.navLinks.about}
+          </Link>
+        </div>
       </div>
     </div>
   );

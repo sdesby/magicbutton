@@ -11,8 +11,16 @@ export const en = {
   navLinks: {
     signIn: "Sign In",
     signUp: "Sign Up",
-    dashboard: "Dashboard"
+    dashboard: "Dashboard",
+    about: "About"
   },
+  about: {
+    title: "About Joyprompts",
+companyTitle: "Our Company",
+companyDescription: "At Joyprompts, we believe that sometimes, all it takes is a tiny spark to reignite a big desire.\nNo need for unshakable motivation.\nNo need to wait for 'the right moment.'\nJust a well-placed prompt — an idea, an invitation, a nudge — to move from 'I don’t know' to 'why not give it a try?'",
+missionTitle: "🎯 Our Mission is Simple:",
+missionDescription: "Create prompts that make you want to act, explore, dream, and express yourself.\nNot to perform better.\nNot to do more.\nBut to reconnect with what you truly enjoy — in just a few lines, in just a few minutes.\n\n🛠️ How do we do it?\nThrough micro-programs designed for different life moments:\nWant to reignite your creativity? → We send you 14 days of drawing, writing, or photo challenges.\nBored on a train or in a waiting room? → We offer quick observation or imagination prompts.\nNeed a morning boost? → Our Morning Pages prompts help you get started without overthinking.\nFor every need, there's a Joyprompt."
+},
   errors: {
     default: "An unexpected error occurred",
     failedToSend: "Failed to send feeling"
