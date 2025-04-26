@@ -9,9 +9,17 @@ export const fr = {
   },
   moreButton: "J'en veux plus",
   navLinks: {
-    signIn: "Se connecter",
-    signUp: "S'inscrire",
-    dashboard: "Tableau de bord"
+    signIn: "Connexion",
+    signUp: "Inscription",
+    dashboard: "Tableau de bord",
+    about: "À Propos"
+  },
+  about: {
+    title: "À Propos de Joy Prompts",
+    companyTitle: "Notre Entreprise",
+    companyDescription: "Chez Joyprompts, on croit que parfois, il suffit d’un tout petit déclic pour rallumer une grande envie.\nPas besoin de motivation en béton.\nPas besoin d’attendre “le bon moment”.\nJuste un prompt bien senti — une idée, une invitation, un clin d'œil — pour passer de “je sais pas” à “et si j’essayais ?",
+    missionTitle: "🎯 Notre mission est simple :",
+    missionDescription: "Créer des prompts qui donnent envie d'agir, d’explorer, de rêver, de s’exprimer.\nPas pour être plus performant.\nPas pour en faire plus.\nMais pour retrouver le plaisir de se reconnecter à ce qu'on aime vraiment — en quelques lignes, en quelques minutes.\n\n🛠️ Comment on fait ça ?\nAvec des micro-programmes adaptés à différents moments de vie :\nTu veux relancer ta créativité ? → On t’envoie 14 jours de défis dessin, écriture, photo.\nTu t’ennuies dans le train ou en salle d’attente ? → On te propose un micro-défi d’observation ou d’imagination.\nTu veux booster ton humeur au réveil ? → Nos prompts pour Morning Pages t’aident à te lancer sans réfléchir.\nÀ chaque besoin son Joyprompt."
   },
   errors: {
     default: "Une erreur inattendue s'est produite",

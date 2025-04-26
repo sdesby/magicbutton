@@ -16,7 +16,6 @@ export async function fetchUserChallenges(
   level?: string
 ): Promise<LocalizedCreativityChallenge[]> {
   try {
-    // Remove all development logs for production cleanliness
     // Ensure domain preferences are properly capitalized
     const formattedDomains = domainPreferences.map(
       domain => domain.charAt(0).toUpperCase() + domain.slice(1)
